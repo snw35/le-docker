@@ -3,8 +3,8 @@ Letsencrypt docker compose.
 
 This docker-compose file will automate the deployment of my letsencrypt images:
 
- * [le-certbot](https://github.com/snw35/le-certbot)
- * [le-nginx](https://github.com/snw35/le-nginx)
+ * [le-certbot](https://github.com/snw35/le-certbot) - [![Build Status](https://travis-ci.org/snw35/le-certbot.svg?branch=master)](https://travis-ci.org/snw35/le-certbot)
+ * [le-nginx](https://github.com/snw35/le-nginx) - [![Build Status](https://travis-ci.org/snw35/le-nginx.svg?branch=master)](https://travis-ci.org/snw35/le-nginx)
 
 ## How to use
 
