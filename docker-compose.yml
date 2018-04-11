@@ -1,0 +1,33 @@
+version: "3.5"
+services:
+
+    le-nginx:
+        image: snw35/le-nginx:latest
+        volumes:
+            - le-conf:/etc/nginx/conf.d
+            - le-webroot:/usr/share/nginx/html
+            - le-certs:/etc/letsencrypt
+        ports:
+            - 80:80
+            - 443
+        restart: unless-stopped
+
+    le-certbot:
+        image: snw35/le-certbot:latest
+        volumes:
+            - le-webroot:/usr/share/nginx/html
+            - le-certs:/etc/letsencrypt
+        environment:
+            - LE_DOMAIN=www.stormo.org
+            - LE_EMAIL=snw35@use.startmail.com
+            - LE_TEST=y
+        restart: "no"
+
+volumes:
+    le-certs:
+        external:
+            name: le-certs
+    le-conf:
+        external:
+            name: le-conf
+    le-webroot:
