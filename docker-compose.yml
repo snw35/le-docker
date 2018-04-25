@@ -9,7 +9,7 @@ services:
             - le-certs:/etc/letsencrypt
         ports:
             - 80:80
-            - 443
+            - 443:443
         restart: unless-stopped
 
     le-certbot:
@@ -18,9 +18,9 @@ services:
             - le-webroot:/usr/share/nginx/html
             - le-certs:/etc/letsencrypt
         environment:
-            - LE_DOMAIN=www.stormo.org
-            - LE_EMAIL=snw35@use.startmail.com
-            - LE_TEST=y
+            - LE_DOMAIN_1=
+            - LE_EMAIL=
+            - LE_TEST=
         restart: "no"
 
 volumes:
