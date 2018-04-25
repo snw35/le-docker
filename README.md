@@ -6,7 +6,7 @@ This docker-compose file will automate the deployment of my letsencrypt images:
  * [le-certbot](https://github.com/snw35/le-certbot) - [![Build Status](https://travis-ci.org/snw35/le-certbot.svg?branch=master)](https://travis-ci.org/snw35/le-certbot)
  * [le-nginx](https://github.com/snw35/le-nginx) - [![Build Status](https://travis-ci.org/snw35/le-nginx.svg?branch=master)](https://travis-ci.org/snw35/le-nginx)
 
-You can use this to automatically generate and renew letsencrypt certificates for any number of domains or subdomains, and to securely proxy traffic to your applications with these certificates, all without bind-mounting the docker-socket into any containers. (See [here]((https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface_) for why you don't want to do that.)
+You can use this to automatically generate and renew letsencrypt certificates for any number of domains or subdomains, and to securely proxy traffic to your applications with these certificates, all without bind-mounting the docker-socket into any containers. (See [here]((https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface) for why you don't want to do that.)
 
 ## How to use
 
