@@ -15,23 +15,23 @@ You can use this to automatically generate and renew letsencrypt certificates fo
  1. Make sure that your domain(s) resolve to the correct IP address.
  1. Make sure that port 80 and 443 are forwarded through your router/firewall to the machine, and that no firewall on the machine itself is blocking them.
  1. Create the two needed volumes, the backplane network, and clone the repo:
-```
-docker volume create le-certs
-docker volume create le-conf
-docker network create le-backplane
-git clone https://github.com/snw35/le-docker
-cd le-docker
-```
+ ```
+ docker volume create le-certs
+ docker volume create le-conf
+ docker network create le-backplane
+ git clone https://github.com/snw35/le-docker
+ cd le-docker
+ ```
  1. Edit the docker-compose.yml file and enter the first domain you would like to generate a certificate for against LE_DOMAIN_1. If you have more, add them as LE_DOMAIN_2, LE_DOMAIN_3, etc. Add your email address against LE_EMAIL, then bring the environment up:
-```
-docker-compose up -d
-```
+ ```
+ docker-compose up -d
+ ```
 
  1. The le-certbot container will attempt to generate a new certificate for each of the configured domains if none already exist. Check the log to see its progress:
-```
-docker-compose logs
-```
-    See the troubleshooting section below if anything went wrong.
+ ```
+ docker-compose logs
+ ```
+ See the troubleshooting section below if anything went wrong.
 
  1. Connect your application(s) to the 'le-backplane' network. If your application has several containers, only the "front-end" one needs to connect to it, e.g the webserver or endpoint. So for example, in a nextcloud deployment, you would conect the nginx or apache container serving nextcloud to the 'le-backplane' network.
 
@@ -40,7 +40,7 @@ docker-compose logs
  docker run -dit --rm --mount source=le-conf,target=/etc/nginx/ alpine:3.7 sh
  cd /etc/nginx/conf.d
  ```
-When you are done, restart the compose environment to make sure nginx starts with the new configuration:
+ When you are done, restart the compose environment to make sure nginx starts with the new configuration:
  ```
  docker-compose down
  docker-compose up -d
