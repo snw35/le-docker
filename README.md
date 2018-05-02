@@ -36,7 +36,7 @@ You can use this to automatically generate and renew letsencrypt certificates fo
     docker-compose logs
     ```
 
-  See the troubleshooting section below if anything went wrong.
+    See the troubleshooting section below if anything went wrong.
 
  1. Connect your application(s) to the 'le-backplane' network. If your application has several containers, only the "front-end" one needs to connect to it, e.g the webserver or endpoint. So for example, in a nextcloud deployment, you would conect the nginx or apache container serving nextcloud to the 'le-backplane' network.
 
@@ -47,8 +47,8 @@ You can use this to automatically generate and renew letsencrypt certificates fo
     cd /etc/nginx/conf.d
     ```
 
- When you are done, restart the compose environment to make sure nginx starts with the new configuration:
- 
+    When you are done, restart the compose environment to make sure nginx starts with the new configuration:
+
     ```
     docker-compose down
     docker-compose up -d
@@ -75,7 +75,7 @@ Some good resources for creating nginx config files are:
  * Mozilla's SSL conf generator: https://mozilla.github.io/server-side-tls/ssl-config-generator/
  * Config generator by valentinxxx: https://nginxconfig.io/
 
-Here is the template that I am using, which is based on Mozilla's generator
+Here is an example template, which is based on Mozilla's generator
 (the parts you need to edit are enclosed in \_\_<>\_\_):
 
 ```
