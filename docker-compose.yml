@@ -10,6 +10,8 @@ services:
         ports:
             - 80:80
             - 443:443
+        networks:
+            - le-backplane
         restart: unless-stopped
 
     le-certbot:
@@ -31,3 +33,7 @@ volumes:
         external:
             name: le-conf
     le-webroot:
+
+networks:
+    le-backplane:
+        external: true
