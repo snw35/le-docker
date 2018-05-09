@@ -143,7 +143,3 @@ Beyond this, much of the troubleshooting steps from the Certbot website apply:
 https://certbot.eff.org/docs/using.html
 
 If you are still having trouble, I would recommend installing certbot natively on a test system and seeing if you can generate a single test certificate that way.
-
-### Running on an Alpine host
-
-__Note__ that certbot docker containers currently cannot run on an Alpine Linux host due to an [unresolved bug/issue](https://github.com/certbot/certbot/issues/5737). (This is Alpine as the main OS on which Docker is installed, not just as the base of the image).
