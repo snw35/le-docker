@@ -1,18 +1,18 @@
 # le-docker
 Letsencrypt docker compose.
 
-This docker-compose file will automate the deployment of my letsencrypt images:
+This docker-compose file will automate the deployment of:
 
  * [le-certbot](https://github.com/snw35/le-certbot) - [![Build Status](https://travis-ci.org/snw35/le-certbot.svg?branch=master)](https://travis-ci.org/snw35/le-certbot)
  * [le-nginx](https://github.com/snw35/le-nginx) - [![Build Status](https://travis-ci.org/snw35/le-nginx.svg?branch=master)](https://travis-ci.org/snw35/le-nginx)
 
 Deployed as a frontend SSL proxy service, they will:
 
- * Fully automate the generation and renewal of letsencrypt SSL certificates.
- * Provide strong cryptographic security (A+ rating on [SSL Labs](https://www.ssllabs.com)) to proxied applications.
+ * Automate the generation and renewal of letsencrypt SSL certificates.
+ * Provide strong security (A+ rating on [SSL Labs](https://www.ssllabs.com)).
  * Not expose the docker socket in any way, making them suitable for production deployment.
 
-You can use this docker compose file to automatically generate and renew letsencrypt certificates for any number of domains or subdomains and to securely proxy traffic to your applications with these certificates, all without bind-mounting the docker-socket into any containers (which other solutions such as the popular [nginx-proxy](https://github.com/jwilder/nginx-proxy) require). The Docker [documentation on security](https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface) explains why it is a bad idea to expose the docker socket in anything other than a test environment.
+You can use this docker compose file to automatically generate and renew letsencrypt certificates for any number of domains. This solution does not require bind-mounting the docker daemon socked into a running container, which the Docker [documentation on security](https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface) does not reccomend for production environments.
 
 ## How to use
 
